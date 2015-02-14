@@ -1,0 +1,33 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.cell.CheckBoxListCell?>
+<?import javafx.scene.layout.HBox?>
+<BorderPane fx:controller="dmillerw.log.gui.ViewerController"
+          xmlns:fx="http://javafx.com/fxml" >
+
+    <left>
+        <ListView
+            fx:id="categoryList"
+            onMouseClicked="#onCategoryListClicked"
+            maxWidth="200"/>
+    </left>
+    <right>
+        <ListView
+                fx:id="levelList"
+                onMouseClicked="#onLevelListClicked"
+                maxWidth="100"/>
+    </right>
+    <center><TextArea fx:id="log" editable="false" wrapText="true"/></center>
+    <bottom><HBox spacing="10">
+        <Button text="Reload File" onMouseClicked="#reload"/>
+        <Button text="Load New File" onMouseClicked="#load"/>
+        <Button text="Reset (TEMPORARY)" onMouseClicked="#reset"/>
+    </HBox></bottom>
+</BorderPane>
